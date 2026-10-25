@@ -1,0 +1,48 @@
+
+---
+import "../styles/global.css";
+
+const {
+    title = "Leihaopam Leisan | Web Developer",
+    description = "Web developer building responsive, accessible websites.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={description} />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <a href="#main-content" class="skip-link">
+            Skip to main content
+        </a>
+
+        <header class="site-header">
+            <a href="/" class="site-brand">
+                <img src="/logo.png" alt="" width="48" height="48" />
+                <span class="brand-name">Leihaopam Leisan<span>.</span></span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="/#projects">Projects</a>
+                <a href="/#skills">Skills</a>
+                <a href="/#experience">Experience</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header>
+
+        <main id="main-content" tabindex="-1">
+            <slot />
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; {new Date().getFullYear()} Leihaopam Leisan</p>
+            <a href="https://github.com/Appam23">GitHub ↗</a>
+        </footer>
+    </body>
+</html>
