@@ -8,8 +8,7 @@ import Layout from "../layouts/Layout.astro";
             <p class="eyebrow">WEB DESIGN & DEVELOPMENT</p>
 
             <h1>
-                Thoughtful design.<br />
-                Practical development.
+                Thoughtful design. Practical development.
             </h1>
 
             <p class="hero-description">
@@ -43,36 +42,21 @@ import Layout from "../layouts/Layout.astro";
                 Expected graduation: July 2027
             </p>
         </div>
-		<div class="hero-media">
-    <img
-        class="profile-photo"
-        src="/Me.png"
-        alt="Leihaopam Leisan"
-    />
+        <div class="hero-media">
+            <img
+                class="profile-photo"
+                src="/Me.png"
+                alt="Leihaopam Leisan"
+            />
 
-    <div class="hero-visual" aria-hidden="true">
-        <div class="browser-bar">
-            <span></span>
-            <span></span>
-            <span></span>
+            <img
+                class="crystal-computer"
+                src="/crystal-computer.png"
+                alt=""
+                aria-hidden="true"
+            />
         </div>
-	
-
-        <div class="code-preview">
-            <p class="code-comment">// Built with purpose</p>
-            <p><span>const</span> developer = &#123;</p>
-            <p class="code-indent">name: "Leihaopam",</p>
-            <p class="code-indent">focus: "Accessible experiences",</p>
-            <p class="code-indent">approach: "Keep learning"</p>
-            <p>&#125;;</p>
-        </div>
-
-        <div class="visual-label">
-            DESIGN → DEVELOP → REFINE
-        </div>
-    	</div>
-	</div>
-	</section>
+    </section>
 	<div class="tech-strip" aria-label="Technologies I use">
     <span><b class="tech-icon html-icon" aria-hidden="true">5</b> HTML</span>
     <span><b class="tech-icon css-icon" aria-hidden="true">3</b> CSS</span>
@@ -297,6 +281,7 @@ import Layout from "../layouts/Layout.astro";
 
         const animatedText = document.createElement("span");
         animatedText.setAttribute("aria-hidden", "true");
+		animatedText.className = "typing-text is-typing";
 
         // Reserve space so the page doesn't shift while typing.
         description.style.minHeight = `${description.offsetHeight}px`;
@@ -306,30 +291,26 @@ import Layout from "../layouts/Layout.astro";
         let position = 0;
 
         function typeLetter() {
-            animatedText.textContent += letters[position];
-            position++;
+			const letter = letters[position];
 
-            if (position < letters.length) {
-                window.setTimeout(typeLetter, 20);
-            } else {
-                description!.style.minHeight = "";
-            }
-        }
+			animatedText.textContent += letter;
+			position++;
+
+			if (position < letters.length) {
+				const delay = /[.!?]/.test(letter)
+					? 300
+					: /[,;:]/.test(letter)
+					? 140
+					: 18 + Math.random() * 18;
+
+				window.setTimeout(typeLetter, delay);
+			} else {
+				description!.style.minHeight = "";
+				animatedText.classList.remove("is-typing");
+			}
+		}
 
         if (letters.length) typeLetter();
     }
 </script>
 
-<style>
-    .typing-accessible {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip-path: inset(50%);
-        white-space: nowrap;
-        border: 0;
-    }
-</style>

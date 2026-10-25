@@ -1,4 +1,59 @@
-/* Foundation */
+/* ==========================================================
+   JOB PORTFOLIO — GLOBAL STYLES
+
+   HOW TO FIND A SECTION
+   Use Command + F and search for a numbered heading or selector.
+   Rules remain in their original order to preserve the design.
+   Repeated selectors are retained; later matching rules may
+   override earlier ones according to CSS specificity.
+
+   QUICK EDIT GUIDE
+   Colors:                :root
+   Outer page background: BODY BACKGROUND IMAGE
+   Header and footer:     DARK NAVY HEADER AND FOOTER
+   Main panel:            MAIN PANEL
+   Hero background:       HERO BACKGROUND IMAGE AND DARK OVERLAY
+   Hero computer:         CRYSTAL COMPUTER IMAGE
+   Project images:        PROJECT BACKGROUND IMAGE
+   Skills icon size:      #skills .skill-icon
+   Experience image:      EXPERIENCE SECTION BACKGROUND IMAGE
+   Contact image:         CONTACT MOUNTAIN BACKGROUND IMAGE
+   Contact handwriting:   CONTACT-MOTTO
+   Typing cursor:         HERO DESCRIPTION TYPING LETTERS
+
+   CONTENTS (original cascade order)
+   01. Foundation
+   02. Header
+   03. Skip link
+   04. Shared elements
+   05. Hero
+   06. Code illustration
+   07. Sections
+   08. Projects
+   09. Skills
+   10. Experience
+   11. Contact
+   12. Footer
+   13. Tablet
+   14. Mobile
+   15. Respect reduced motion preferences
+   16. Dark navy header and footer
+   17. Dark hero with layered lighting
+   18. Layered portrait and code panel
+   19. Raised project cards
+   20. Skills cards
+   21. Technology strip
+   22. Contact-motto
+   23. Experience
+   24. Experience
+   25. Skills
+   26. Hero description typing letters
+   ========================================================== */
+
+/* ==========================================================
+   01. FOUNDATION
+   ========================================================== */
+
 :root {
     --background: #f7f8fc;
     --surface: #ffffff;
@@ -76,7 +131,11 @@ main,
     margin-inline: auto;
 }
 
-/* Header */
+
+/* ==========================================================
+   02. HEADER
+   ========================================================== */
+
 .site-header {
     display: flex;
     align-items: center;
@@ -120,7 +179,11 @@ main,
     color: var(--accent-dark);
 }
 
-/* Skip link */
+
+/* ==========================================================
+   03. SKIP LINK
+   ========================================================== */
+
 .skip-link {
     position: absolute;
     top: 12px;
@@ -137,7 +200,11 @@ main,
     transform: translateY(0);
 }
 
-/* Shared elements */
+
+/* ==========================================================
+   04. SHARED ELEMENTS
+   ========================================================== */
+
 .eyebrow {
     margin-bottom: 18px;
     color: var(--accent);
@@ -188,7 +255,11 @@ main,
     text-decoration: underline;
 }
 
-/* Hero */
+
+/* ==========================================================
+   05. HERO
+   ========================================================== */
+
 .hero {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -197,6 +268,16 @@ main,
     padding-block: 88px;
 }
 
+/* CRYSTAL COMPUTER IMAGE */
+.hero-media .crystal-computer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin-top: -24px;
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.3));
+}
 .hero-description {
     max-width: 600px;
     color: var(--muted);
@@ -215,7 +296,11 @@ main,
     font-size: 0.9rem;
 }
 
-/* Code illustration */
+
+/* ==========================================================
+   06. CODE ILLUSTRATION
+   ========================================================== */
+
 .hero-visual {
     min-width: 0;
     overflow: hidden;
@@ -282,7 +367,11 @@ main,
     letter-spacing: 0.13em;
 }
 
-/* Sections */
+
+/* ==========================================================
+   07. SECTIONS
+   ========================================================== */
+
 .section {
     padding-block: 64px;
     border-top: 1px solid var(--border);
@@ -297,7 +386,11 @@ main,
     color: var(--muted);
 }
 
-/* Projects */
+
+/* ==========================================================
+   08. PROJECTS
+   ========================================================== */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -353,7 +446,11 @@ main,
     font-weight: bold;
 }
 
-/* Skills */
+
+/* ==========================================================
+   09. SKILLS
+   ========================================================== */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -372,7 +469,11 @@ main,
     color: var(--muted);
 }
 
-/* Experience */
+
+/* ==========================================================
+   10. EXPERIENCE
+   ========================================================== */
+
 .experience-card {
     padding: clamp(24px, 4vw, 40px);
     background: #eeecff;
@@ -398,7 +499,11 @@ main,
     margin-bottom: 0;
 }
 
-/* Contact */
+
+/* ==========================================================
+   11. CONTACT
+   ========================================================== */
+
 .contact-section {
     margin-block: 24px 64px;
     padding: clamp(28px, 5vw, 56px);
@@ -415,7 +520,11 @@ main,
     color: white;
 }
 
-/* Footer */
+
+/* ==========================================================
+   12. FOOTER
+   ========================================================== */
+
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -430,7 +539,11 @@ main,
     margin: 0;
 }
 
-/* Tablet */
+
+/* ==========================================================
+   13. TABLET
+   ========================================================== */
+
 @media (max-width: 900px) {
     .site-header {
         flex-direction: column;
@@ -454,7 +567,11 @@ main,
     }
 }
 
-/* Mobile */
+
+/* ==========================================================
+   14. MOBILE
+   ========================================================== */
+
 @media (max-width: 650px) {
     main,
     .site-header,
@@ -489,12 +606,18 @@ main,
     }
 }
 
-/* Respect reduced motion preferences */
+
+/* ==========================================================
+   15. RESPECT REDUCED MOTION PREFERENCES
+   ========================================================== */
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 }
+
+/* BODY BACKGROUND IMAGE */
 body {
     background-color: var(--background);
     background-image: url("/background.png");
@@ -502,6 +625,8 @@ body {
     background-size: 100% auto;
     background-repeat: repeat-y;
 }
+
+/* HEADER LOGO AND BRAND ALIGNMENT */
 .site-brand {
     display: inline-flex;
     align-items: center;
@@ -523,6 +648,8 @@ body {
 .site-brand .brand-name {
     color: var(--text);
 }
+
+/* HERO PORTRAIT AND MEDIA LAYOUT */
 .hero-media {
     display: grid;
     justify-items: center;
@@ -545,7 +672,11 @@ body {
 .hero-media .hero-visual {
     width: 100%;
 }
-/* Dark navy header and footer */
+
+/* ==========================================================
+   16. DARK NAVY HEADER AND FOOTER
+   ========================================================== */
+
 .site-header,
 .site-footer {
     background: #172033;
@@ -580,6 +711,8 @@ body {
 .site-footer a:hover {
     color: #c4b5fd;
 }
+
+/* MAIN PANEL — BACKGROUND, SPACING AND SHADOW */
 main {
     margin-block: 28px;
     padding: clamp(20px, 4vw, 48px);
@@ -588,6 +721,8 @@ main {
     border-radius: 20px;
     box-shadow: 0 12px 40px rgba(23, 32, 51, 0.12);
 }
+
+/* EXPERIENCE SECTION BACKGROUND IMAGE */
 #experience {
     padding: clamp(24px, 4vw, 48px);
     border: 1px solid #dedffa;
@@ -599,6 +734,8 @@ main {
 #experience .experience-card {
     background: rgba(255, 255, 255, 0.88);
 }
+
+/* TANGKHUL PROJECT BACKGROUND IMAGE */
 .culture-visual {
     background:
         linear-gradient(
@@ -608,6 +745,8 @@ main {
         ),
         url("/Ukhrul_hills.png") center / cover no-repeat;
 }
+
+/* WORDPRESS PROJECT BACKGROUND IMAGE */
 .wordpress-visual {
     background:
         linear-gradient(
@@ -617,11 +756,34 @@ main {
         ),
         url("/website.png") center / cover no-repeat;
 }
+
+/* CONTACT MOUNTAIN BACKGROUND IMAGE */
 .contact-section {
     background: #081426 url("/panorama.png") center / cover no-repeat;
 }
 
-/* Dark hero with layered lighting */
+/* HERO BACKGROUND IMAGE AND DARK OVERLAY */
+main > section.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 15, 32, 0.88) 0%,
+            rgba(5, 15, 32, 0.65) 48%,
+            rgba(5, 15, 32, 0.1) 100%
+        ),
+        url("/hero-background.png") center / cover no-repeat;
+    background-color: #071426;
+}
+
+.hero .hero-description,
+.hero .hero-note {
+    color: #ffffff;
+}
+
+/* ==========================================================
+   17. DARK HERO WITH LAYERED LIGHTING
+   ========================================================== */
+
 .hero {
     position: relative;
     isolation: isolate;
@@ -702,7 +864,11 @@ main {
         grid-template-columns: 1fr;
     }
 }
-/* Layered portrait and code panel */
+
+/* ==========================================================
+   18. LAYERED PORTRAIT AND CODE PANEL
+   ========================================================== */
+
 .hero-media {
     position: relative;
     display: grid;
@@ -760,7 +926,11 @@ main {
         transform: none;
     }
 }
-/* Raised project cards */
+
+/* ==========================================================
+   19. RAISED PROJECT CARDS
+   ========================================================== */
+
 .project-card {
     border: 1px solid #e0e5f2;
     border-radius: 18px;
@@ -815,7 +985,11 @@ main {
         padding: 24px;
     }
 }
-/* Skills cards */
+
+/* ==========================================================
+   20. SKILLS CARDS
+   ========================================================== */
+
 .skill-card {
     position: relative;
     padding: 30px;
@@ -850,8 +1024,12 @@ main {
     }
 }
 
-/* Technology strip */
-/* Technology strip */
+
+/* ==========================================================
+   21. TECHNOLOGY STRIP
+   ========================================================== */
+
+
 .tech-strip {
     display: flex;
     justify-content: center;
@@ -911,6 +1089,8 @@ main {
     border-radius: 50%;
     font-family: Georgia, serif;
 }
+
+/* SCREEN READER TEXT FOR TYPING EFFECT */
 .typing-accessible {
     position: absolute;
     width: 1px;
@@ -923,7 +1103,11 @@ main {
     border: 0;
 }
 
-/* Contact-motto */
+
+/* ==========================================================
+   22. CONTACT-MOTTO
+   ========================================================== */
+
 
 .contact-section > .contact-motto {
     position: absolute;
@@ -961,9 +1145,12 @@ main {
     text-shadow: 0 0 12px rgba(132, 155, 255, 0.3);
 }
 
-/* Experience */
 
-/* Experience */
+/* ==========================================================
+   23. EXPERIENCE
+   ========================================================== */
+
+
 .experience-card {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -1078,7 +1265,11 @@ main {
     }
 }
 
-/* Skills */
+
+/* ==========================================================
+   25. SKILLS
+   ========================================================== */
+
 
 #skills .skill-icon {
     display: flex;
@@ -1095,4 +1286,29 @@ main {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* ==========================================================
+   26. HERO DESCRIPTION TYPING LETTERS
+   ========================================================== */
+
+
+.hero .hero-description {
+    color: #ddd6fe;
+}
+
+.hero .hero-description .typing-text.is-typing::after {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    margin-left: 5px;
+    vertical-align: -0.12em;
+    background-color: #99f6e4;
+    animation: typing-cursor 0.8s step-end infinite;
+}
+
+@keyframes typing-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
