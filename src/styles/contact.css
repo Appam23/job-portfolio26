@@ -1,0 +1,94 @@
+.contact-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-block: 32px;
+}
+
+.contact-page > .text-link {
+    display: inline-block;
+    margin-bottom: 32px;
+}
+
+.contact-page h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.contact-intro,
+.email-option {
+    color: var(--muted);
+}
+
+#contact-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #78839b;
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+
+input,
+select {
+    min-height: 48px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+button {
+    justify-self: start;
+    margin-top: 16px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #536078;
+    border-color: #536078;
+    cursor: wait;
+}
+
+#form-status {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#form-status:empty {
+    margin: 0;
+}
+
+.email-option {
+    margin-top: 24px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 650px) {
+    button {
+        justify-self: stretch;
+    }
+}
